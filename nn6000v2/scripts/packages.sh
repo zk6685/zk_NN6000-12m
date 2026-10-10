@@ -87,7 +87,15 @@ install_openwrt_packages() {
         luci-app-oaf oaf open-app-filter \
         luci-app-dockerman luci-app-quickfile \
         luci-app-mini-diskmanager \
-        luci-app-tailscale-community luci-app-zerotier
+        luci-app-tailscale-community luci-app-zerotier \
+        luci-app-openlist2 openlist2 \
+        luci-app-filebrowser-go \
+        luci-app-mosdns mosdns \
+        luci-app-clouddrive2 clouddrive2 \
+        luci-app-gecoosac gecoosac \
+        luci-app-daede dae daed \
+        luci-app-nikki nikki \
+        luci-app-openclash
 }
 
 clone_singbox() {
