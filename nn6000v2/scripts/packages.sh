@@ -93,7 +93,7 @@ install_openwrt_packages() {
         luci-app-mosdns mosdns \
         luci-app-clouddrive2 clouddrive2 \
         luci-app-gecoosac gecoosac \
-        luci-app-nikki nikki \
+        luci-app-nikki nikki mihomo-meta \
         luci-app-openclash
 }
 
@@ -359,9 +359,9 @@ clone_nikki() {
     clone_packages "OpenWrt-nikki" \
         "${GITHUB_BASE}nikkinikki-org/OpenWrt-nikki.git" \
         "$TEMP_DIR" \
-        "luci-app-nikki nikki"
+        "luci-app-nikki nikki mihomo-meta"
 
-    for pkg in luci-app-nikki nikki; do
+    for pkg in luci-app-nikki nikki mihomo-meta; do
         if [ -d "$TEMP_DIR/$pkg" ]; then
             rm -rf "$OPENWRT_PACKAGES_DIR/$pkg" 2>/dev/null || true
             mv "$TEMP_DIR/$pkg" "$OPENWRT_PACKAGES_DIR/$pkg"
