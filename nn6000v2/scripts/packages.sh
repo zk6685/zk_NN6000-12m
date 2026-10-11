@@ -91,6 +91,7 @@ install_openwrt_packages() {
         luci-app-openlist2 openlist2 \
         luci-app-filebrowser-go \
         luci-app-mosdns mosdns \
+        geo2txt \
         luci-app-clouddrive2 clouddrive2 \
         luci-app-gecoosac gecoosac \
         luci-app-nikki nikki mihomo-meta \
@@ -313,6 +314,23 @@ clone_luci_tailscale() {
         "rm -rf \"$TARGET_DIR\" 2>/dev/null || true; mv \"$TEMP_DIR/luci-app-tailscale-community\" \"$TARGET_DIR\"; rm -rf \"$TEMP_DIR\""
 }
 # ===== zk6685 custom plugins =====
+
+clone_geo2txt() {
+    local TEMP_DIR="$OPENWRT_PACKAGES_DIR/geo2txt-temp"
+    rm -rf "$TEMP_DIR" 2>/dev/null || true
+
+    clone_packages "geo2txt" \
+        "${GITHUB_BASE}kenzok8/small-package.git" \
+        "$TEMP_DIR" \
+        "geo2txt"
+
+    if [ -d "$TEMP_DIR/geo2txt" ]; then
+        rm -rf "$OPENWRT_PACKAGES_DIR/geo2txt" 2>/dev/null || true
+        mv "$TEMP_DIR/geo2txt" "$OPENWRT_PACKAGES_DIR/geo2txt"
+    fi
+    rm -rf "$TEMP_DIR"
+    echo "✓ geo2txt 克隆完成"
+}
 
 clone_xuanranran_packages() {
     local TEMP_DIR="$OPENWRT_PACKAGES_DIR/xuanranran-temp"

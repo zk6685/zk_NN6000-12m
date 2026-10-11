@@ -52,6 +52,7 @@ main() {
     clone_oaf
     clone_luci_tailscale
     clone_singbox
+    clone_geo2txt
     clone_xuanranran_packages
     clone_gecoosac
     clone_daede
