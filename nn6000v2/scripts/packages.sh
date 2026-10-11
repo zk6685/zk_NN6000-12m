@@ -93,7 +93,6 @@ install_openwrt_packages() {
         luci-app-mosdns mosdns \
         luci-app-clouddrive2 clouddrive2 \
         luci-app-gecoosac gecoosac \
-        luci-app-daede dae daed \
         luci-app-nikki nikki \
         luci-app-openclash
 }
