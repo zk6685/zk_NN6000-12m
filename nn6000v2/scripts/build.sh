@@ -127,6 +127,13 @@ modify_kernel_size
 
 cd "$BASE_PATH/../$BUILD_DIR"
 export TMPDIR=/tmp
+
+# Remove incompatible miniupnpd patch (upstream version bump breaks old patch)
+rm -f feeds/packages/net/miniupnpd/patches/020-descr-filter-fix.patch 2>/dev/null || true
+
+# Remove homeproxy to break recursive dependency in kconfig
+rm -rf feeds/openwrt_packages/luci-app-homeproxy feeds/openwrt_packages/homeproxy 2>/dev/null || true
+
 make defconfig
 
 if [[ $Build_Mod == "debug" ]]; then
